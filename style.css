@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+main {
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: hsl(240, 5%, 91%);
+    margin-inline: 20px;
+    padding-bottom: 10px;
+}
+
+.img-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.fg-image {
+    position: absolute;
+    top: -104px;
+}
+
+.content-container {
+    width: 100%;
+    height: 100%;
+    padding-inline: 20px;
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section-heading {
+    font-weight: 700;
+    color: hsl(238, 29%, 16%);
+    font-size: 35px;
+    font-family: 'Kumbh Sans', sans-serif;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.accordion {
+    width: 100%;
+    transition: all 1s ease-in;
+}
+
+.accordion-head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accordion-title {
+    color: hsl(237, 12%, 33%);
+}
+
+.accordion[data-open="true"] .accordion-title {
+    font-weight: 700;
+    color: hsl(237, 12%, 33%);
+}
+
+.accordion[data-open="true"] .accordion-head img {
+    transform: rotate(180deg);
+}
+
+.accordion-description {
+    margin-top: 15px;
+    font-size: 14px;
+    color: hsl(240, 6%, 50%);
+}
+
+.accordion[data-open="false"] .accordion-description {
+    display: none;
+}
+
+hr {
+    border-top: 0.5px solid hsl(240, 6%, 50%, 0.66);
+    width: 96%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.desktop-only-box {
+    display: none;
+}
+
+
+
+@media only screen and (min-width: 992px) {
+    .container {
+        flex-direction: row;
+        width: 85%;
+        padding: 0;
+    }
+
+    .img-container {
+        width: 50%;
+        overflow: hidden;
+    }
+
+    .content-container {
+        width: 50%;
+        align-items: start;
+    }
+
+    hr {
+        width: 90%;
+    }
+
+    hr:last-child {
+        margin-bottom: 60px;
+    }
+
+    .accordion {
+        width: 90%;
+    }
+
+    .bg-image {
+        position: relative;
+        bottom: -80px;
+        left: -80px;
+        overflow: hidden;
+    }
+
+    .fg-image {
+        top: calc(50% - 150px);
+        bottom: 0px;
+        left: -60px;
+    }
+
+    .desktop-only-box {
+        display: block;
+        position: absolute;
+        left: calc(7.5% - 95.5px);
+        bottom: calc(0% + 165.5px);
+        z-index: 5000;
+    }
+}
